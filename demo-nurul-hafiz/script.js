@@ -1,4 +1,4 @@
-/* Nurul & Hafiz — Wedding invitation interactions */
+/* Aisyah & Daniel — Wedding invitation interactions */
 (function () {
   'use strict';
 
@@ -81,11 +81,11 @@
     saveBtn.addEventListener('click', (e) => {
       e.preventDefault();
       const ics = [
-        'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//demo-nurul-hafiz//Wedding//EN',
+        'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//AisyahDaniel//Wedding//EN',
         'BEGIN:VEVENT',
         'UID:demo-nurul-hafiz-20270314',
         'DTSTART:20270314T100000', 'DTEND:20270314T170000',
-        'SUMMARY:The Wedding of Nurul & Hafiz',
+        'SUMMARY:The Wedding of Aisyah & Daniel',
         'DESCRIPTION:Akad Nikah 10AM - 12PM | Majlis Resepsi 12PM - 5PM',
         'LOCATION:Cowie Bay Resort, Kota Kinabalu',
         'END:VEVENT', 'END:VCALENDAR'
@@ -109,7 +109,7 @@
       e.preventDefault();
       const fd = new FormData(rsvpForm);
       const name = fd.get('name'), guests = fd.get('guests'), attend = fd.get('attend');
-      const msg = `RSVP Wedding Nurul & Hafiz%0A%0ANama: ${encodeURIComponent(name)}%0ABilangan: ${guests}%0AKehadiran: ${attend === 'yes' ? 'Hadir ✅' : 'Tidak dapat hadir ❌'}`;
+      const msg = `RSVP Wedding Aisyah & Daniel%0A%0ANama: ${encodeURIComponent(name)}%0ABilangan: ${guests}%0AKehadiran: ${attend === 'yes' ? 'Hadir ✅' : 'Tidak dapat hadir ❌'}`;
       const wa = `https://wa.me/60123456789?text=${msg}`;
       window.open(wa, '_blank');
       if (rsvpMsg) rsvpMsg.textContent = 'Terima kasih! RSVP anda sedang dihantar melalui WhatsApp.';
@@ -179,10 +179,7 @@
   if (!cover || cover.classList.contains('hidden')) observeReveals();
 })();
 
-/* ── Personalised guest name (?to=Encik%20Ali) ───────────────────────────
-   Every WhatsApp invite link carries the guest's name, so the cover greets
-   them by name. This is the single cheapest differentiator against every
-   template reseller in Malaysia. */
+/* Personalised guest name (?to=Encik%20Ali) — cover greets the guest by name. */
 (function () {
   var params = new URLSearchParams(window.location.search);
   var to = params.get('to');
