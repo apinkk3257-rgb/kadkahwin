@@ -178,3 +178,14 @@
   /* ── Reveal if cover already dismissed (e.g. no JS-first state) ── */
   if (!cover || cover.classList.contains('hidden')) observeReveals();
 })();
+
+/* ── Personalised guest name (?to=Encik%20Ali) ───────────────────────────
+   Every WhatsApp invite link carries the guest's name, so the cover greets
+   them by name. This is the single cheapest differentiator against every
+   template reseller in Malaysia. */
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var to = params.get('to');
+  var el = document.getElementById('guestName');
+  if (to && el) el.textContent = decodeURIComponent(to).slice(0, 60);
+})();
